@@ -29,6 +29,20 @@
     .buttons {
       display: flex;
       justify-content: space-between;
+      visibility: hidden;
+    }
+  }
+
+  &:hover {
+    .buttons {
+      visibility: visible;
+    }
+    .price {
+      .btn-main {
+        color: #ffffff !important;
+        background-color: $primary;
+        text-decoration: none;
+      }
     }
   }
 
