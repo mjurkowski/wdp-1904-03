@@ -12,6 +12,7 @@ header {
         line-height: 55px;
 
         a {
+          @extend %transition-duration;
           color: #ffffff;
           font-size: 13px;
 
@@ -83,7 +84,16 @@ header {
         color: #ffffff;
         text-decoration: none;
 
+<<<<<<< HEAD
         .cart-container {
+=======
+        .cart-icon {
+          @extend %transition-duration;
+          background-color: $primary;
+          width: 55px;
+          height: 50px;
+          border-radius: 3px;
+>>>>>>> Justified hover animations (complete commit)
           display: flex;
           align-items: center;
 
@@ -151,6 +161,7 @@ header {
           align-items: stretch;
 
           a {
+            @extend %transition-duration;
             color: $text-color;
             text-transform: uppercase;
             font-size: 12px;
