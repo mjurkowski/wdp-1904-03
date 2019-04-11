@@ -8,7 +8,6 @@
       size: cover;
       position: center;
     }
-    background-image: url("https://picsum.photos/361/291/?blur");
 
     .details {
       padding: 15px 20px;
@@ -28,6 +27,18 @@
         text-align: right;
       }
     }
+  }
+
+  .article-1 {
+    background-image: url("../images/blog1.jpg");
+  }
+
+  .article-2 {
+    background-image: url("../images/blog2.jpg");
+  }
+
+  .article-3 {
+    background-image: url("../images/blog3.jpg");
   }
 
   .post-info {
