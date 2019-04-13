@@ -6,12 +6,14 @@
   .photo {
     position: relative;
     padding: 80% 10px 0 10px;
+
     background: {
       color: #f4f5f7;
       size: contain;
       position: center;
       repeat: no-repeat;
     }
+
     overflow: hidden;
     align-items: flex-end;
 
@@ -37,11 +39,25 @@
     .buttons {
       visibility: visible;
     }
+
     .price {
-      .btn-main {
+      .btn-main-small {
+        margin: 0;
+        display: inline-block;
         color: #fff;
         background-color: $primary;
         text-decoration: none;
+      }
+
+      .new-price {
+        font-size: 16px;
+        font-weight: bold;
+        display: inline-block;
+      }
+
+      .old-price {
+        color: #7f3333;
+        text-decoration: line-through;
       }
     }
   }
@@ -92,5 +108,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    .new-price {
+      display: none;
+    }
   }
 }
