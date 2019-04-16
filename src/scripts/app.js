@@ -4,10 +4,7 @@ console.log('hello');
 
 var toggleSidebar = function () {
   var menuMobile = document.querySelector('#toggle-menu');
-  var sidebarMenu = document.querySelector('#sidebar-mobile');
-
   menuMobile.classList.toggle('active');
-  sidebarMenu.classList.toggle('hidden');
 };
 
 var hamburgerMobile = document.querySelector('#hamburger-on-mobile');
