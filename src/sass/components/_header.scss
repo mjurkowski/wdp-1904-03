@@ -173,6 +173,12 @@ header {
         display: flex;
         align-items: center;
         position: relative;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #dea55c;
+          color: #ffffff;
+        }
 
         i:first-child {
           color: $primary;
@@ -189,13 +195,26 @@ header {
 
         select {
           -webkit-appearance: none;
-          border: 0;
+          border: none;
           background-color: transparent;
-          outline: none;
           padding: 5px 30px 5px 35px;
           font-size: 14px;
           position: relative;
           z-index: 1;
+          cursor: pointer;
+
+          &:hover {
+            color: #ffffff;
+          }
+
+          &:focus {
+            outline: none;
+          }
+
+          option {
+            background-color: #dea55c;
+            color: #ffffff;
+          }
         }
       }
 
