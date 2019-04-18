@@ -65,4 +65,17 @@
       color: $primary;
     }
   }
+
+  &:active {
+    background-color: $primary;
+    border-color: $primary;
+
+    .icon::before {
+      border-color: $primary;
+    }
+
+    .content {
+      color: #ffffff;
+    }
+  }
 }
