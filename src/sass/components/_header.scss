@@ -43,14 +43,20 @@ header {
   .company-claim {
     background-color: $header-bg;
 
+    img {
+      padding-bottom: 14px;
+    }
+
     .container > .row {
       height: 145px;
     }
 
     .phone-number {
+      padding-right: 10px;
+
       p {
         margin: 0;
-        font-size: 17px;
+        font-size: 14px;
         line-height: 42px;
         color: rgb(216, 216, 216);
         font-weight: 500;
@@ -221,6 +227,33 @@ header {
           border: 0;
           background-color: transparent;
           outline: none;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 767px) {
+  header {
+    .top-bar {
+      div {
+        div {
+          div {
+            display: flex;
+            padding: 0;
+            flex-basis: auto;
+
+            &:first-child {
+              width: 60%;
+              padding-left: 10px;
+              justify-content: flex-start;
+            }
+
+            &:last-child {
+              width: 40%;
+              justify-content: flex-end;
+              padding-right: 10px;
+            }
+          }
         }
       }
     }
