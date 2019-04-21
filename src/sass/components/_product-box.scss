@@ -49,15 +49,7 @@
         background-color: $primary;
         text-decoration: none;
       }
-
-      .new-price {
-        font-size: 16px;
-        font-weight: bold;
-        display: inline-block;
-      }
-
       .old-price {
-        color: #7f3333;
         text-decoration: line-through;
       }
     }
@@ -93,6 +85,10 @@
   .pic-8 {
     background-image: url("../images/product08.jpg");
   }
+  
+   .old-price {
+    text-decoration: line-through;
+   }
 
   .content {
     text-align: center;
@@ -140,9 +136,5 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    .new-price {
-      display: none;
-    }
   }
 }
