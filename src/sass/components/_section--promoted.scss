@@ -1,8 +1,6 @@
 .promoted-box {
   display: flex;
   justify-content: space-between;
-  padding-left: 0;
-  padding-right: 0;
 
   .hot-deals {
     max-width: 361px;
@@ -302,7 +300,7 @@
         font-size: 26px;
         display: inline;
         height: inherit;
-        width: 373px;
+        width: 375px;
         border: none;
         background-color: $footer-claim-bg;
         color: $white;
