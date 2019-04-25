@@ -44,16 +44,17 @@
     .price {
       .btn-main-small {
         margin: 0;
-        display: inline-block;
         color: #fff;
         background-color: $primary;
         text-decoration: none;
       }
+
       .old-price {
         text-decoration: line-through;
       }
     }
   }
+
   .pic-1 {
     background-image: url("../images/product01.jpg");
   }
@@ -85,10 +86,10 @@
   .pic-8 {
     background-image: url("../images/product08.jpg");
   }
-  
-   .old-price {
+
+  .old-price {
     text-decoration: line-through;
-   }
+  }
 
   .content {
     text-align: center;
