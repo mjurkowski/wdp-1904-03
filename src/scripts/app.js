@@ -5,11 +5,20 @@ const firstPoint = document.getElementById('first-point');
 const secondPoint = document.getElementById('second-point');
 const thirdPoint = document.getElementById('third-point');
 const carouselCells = document.querySelectorAll('.images');
+const leftArrow = document.querySelector('.arrow-left');
+const rightArrow = document.querySelector('.arrow-right');
 
-const flkty = new Flickity('.hot-deals-carousel', {
+const leftCarousel = new Flickity('.hot-deals-carousel', {
   pageDots: false,
   wrapAround: true,
   autoPlay: 3000,
+  prevNextButtons: false,
+  draggable: false
+});
+
+const rightCarousel = new Flickity('.products-carousel', {
+  pageDots: false,
+  wrapAround: true,
   prevNextButtons: false,
   draggable: false
 });
@@ -33,29 +42,29 @@ const activeThirdPoint = () => {
 };
 
 firstPoint.addEventListener('click', () => {
-  flkty.selectCell(0);
-  flkty.pausePlayer();
+  leftCarousel.selectCell(0);
+  leftCarousel.pausePlayer();
   activeFirstPoint();
 });
 
 secondPoint.addEventListener('click', () => {
-  flkty.selectCell(1);
-  flkty.pausePlayer();
+  leftCarousel.selectCell(1);
+  leftCarousel.pausePlayer();
   activeSecondPoint();
 });
 
 thirdPoint.addEventListener('click', () => {
-  flkty.selectCell(2);
-  flkty.pausePlayer();
+  leftCarousel.selectCell(2);
+  leftCarousel.pausePlayer();
   activeThirdPoint();
 });
 
-pointsBox.addEventListener('mouseleave', () => flkty.unpausePlayer());
+pointsBox.addEventListener('mouseleave', () => leftCarousel.unpausePlayer());
 
-flkty.on('change', () => {
-  if (flkty.selectedIndex === 0) {
+leftCarousel.on('change', () => {
+  if (leftCarousel.selectedIndex === 0) {
     activeFirstPoint();
-  } else if (flkty.selectedIndex === 1) {
+  } else if (leftCarousel.selectedIndex === 1) {
     activeSecondPoint();
   } else {
     activeThirdPoint();
@@ -64,6 +73,9 @@ flkty.on('change', () => {
 
 carouselCells.forEach(cell =>
   cell.addEventListener('mouseleave', () => {
-    flkty.playPlayer();
+    leftCarousel.playPlayer();
   })
 );
+
+leftArrow.addEventListener('click', () => rightCarousel.previous());
+rightArrow.addEventListener('click', () => rightCarousel.next());
