@@ -1,6 +1,23 @@
 .section--gallery {
+  height: 603px;
+  margin: 28px auto;
+
+  nav a.nav-link {
+    color: black;
+    text-transform: uppercase;
+    border-color: #dee2e6 #dee2e6 #fff;
+    font-weight: 500;
+  }
+
+  nav a.nav-link.active {
+    color: #d58e32;
+    background-color: #fff;
+    border-color: #dee2e6 #dee2e6 #fff;
+    border-top: 3px solid #d58e32 !important;
+  }
+
   #featured-gallery-image {
-    background-image: url("https://cdn.stocksnap.io/img-thumbs/960w/UM7KUDY33D.jpg");
+    background-image: url("../../src/images/product03.jpg");
     background-color: #f4f5f7;
     background-size: contain;
     background-position: center;
@@ -18,27 +35,33 @@
       p {
         text-transform: uppercase;
         color: $black;
-        font-size: 20px;
-        margin-bottom: 20px;
+        font-size: 18px;
+        margin-bottom: 12px;
+        font-weight: 700;
 
         span {
-          font-size: 48px;
+          font-size: 42px;
           color: $green;
-          font-weight: 700;
+          font-weight: 400;
         }
       }
 
-      h3 {
-        font-size: 48px;
+      #featuredTitle {
+        font-size: 36px;
         color: $primary;
+        font-weight: 500;
+        text-transform: capitalize;
+        line-height: 1;
       }
 
       button {
-        text-transform: uppercase;
-        font-size: 12px;
-        border: 0;
-        padding: 12px 28px;
+        width: 136px;
         height: 54px;
+        text-transform: uppercase;
+        font-size: 10px;
+        border: 0;
+        border-radius: 3px;
+        text-align: center;
       }
     }
   }
@@ -52,6 +75,15 @@
     background-color: #ffffff;
     border: 1px solid #e1e1e1;
     margin-bottom: 2rem;
+
+    .flickity-prev-next-button:hover {
+      background: #d58e32 !important;
+    }
+
+    .flickity-button:focus {
+      outline: 0;
+      box-shadow: none !important;
+    }
 
     .custom-tooltip {
       position: relative;
@@ -230,13 +262,14 @@
       height: 88px;
       margin-right: 10px;
       background: #fafafa;
+      padding: 3px 22px;
 
       .carousel-cell {
         margin-right: 10px;
         margin-top: 9px;
         height: 70px;
         width: 70px;
-        opacity: 0.5;
+        opacity: 0.3;
       }
 
       img {
@@ -284,12 +317,12 @@
     /* position outside */
 
     .flickity-prev-next-button.previous {
-      left: 15px;
+      left: 22px;
       top: 83%;
     }
 
     .flickity-prev-next-button.next {
-      right: 15px;
+      right: 22px;
       top: 83%;
     }
   }

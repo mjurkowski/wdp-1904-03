@@ -7,27 +7,31 @@ var slidesData = [
     id: '0',
     name: 'Aenean Ru Bristique 1',
     price: 145.9,
+    promo: 120,
     src: 'https://images-na.ssl-images-amazon.com/images/I/51A8IdC0VjL._SX425_.jpg',
     rating: 4
   },
   {
     id: '1',
     name: 'Aenean Ru Bristique 4',
-    price: 145.9,
+    price: 72,
+    promo: 50,
     src: 'https://www.alder.in/wp-content/uploads/2017/09/FDS1.jpg',
     rating: 5
   },
   {
     id: '2',
     name: 'Aenean Ru Bristique 31',
-    price: 145.9,
+    price: 45.9,
+    promo: 44,
     src: 'https://images-na.ssl-images-amazon.com/images/I/51A8IdC0VjL._SX425_.jpg',
     rating: 2
   },
   {
     id: '3',
     name: 'Aenean Ru Bristique',
-    price: 145.9,
+    price: 270,
+    promo: 232.0,
     src: 'https://havertys.scene7.com/is/image/Havertys/5-4598-0009',
     rating: 3
   },
@@ -35,6 +39,7 @@ var slidesData = [
     id: '4',
     name: 'Aenean Ru Bristique',
     price: 45.9,
+    promo: 36,
     src: 'https://cb2.scene7.com/is/image/CB2/AndesBedQueenAcaciaLLSHS16_16x9/',
     rating: 0
   }

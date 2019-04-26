@@ -3,7 +3,7 @@
  * http://github.com/janl/mustache.js
  */
 
-/*global define: false Mustache: true*/
+/* global define: false Mustache: true */
 
 (function defineMustache(global, factory) {
   if (typeof exports === 'object' && exports && typeof exports.nodeName !== 'string') {
@@ -143,11 +143,13 @@
     var openingTagRe, closingTagRe, closingCurlyRe;
 
     function compileTags(tagsToCompile) {
-      if (typeof tagsToCompile === 'string')
+      if (typeof tagsToCompile === 'string') {
         tagsToCompile = tagsToCompile.split(spaceRe, 2);
+      }
 
-      if (!isArray(tagsToCompile) || tagsToCompile.length !== 2)
+      if (!isArray(tagsToCompile) || tagsToCompile.length !== 2) {
         throw new Error('Invalid tags: ' + tagsToCompile);
+      }
 
       openingTagRe = new RegExp(escapeRegExp(tagsToCompile[0]) + '\\s*');
       closingTagRe = new RegExp('\\s*' + escapeRegExp(tagsToCompile[1]));
@@ -207,8 +209,9 @@
       }
 
       // Match the closing tag.
-      if (!scanner.scan(closingTagRe))
+      if (!scanner.scan(closingTagRe)) {
         throw new Error('Unclosed tag at ' + scanner.pos);
+      }
 
       token = [type, value, start, scanner.pos];
       tokens.push(token);
@@ -219,11 +222,13 @@
         // Check section nesting.
         openSection = sections.pop();
 
-        if (!openSection)
+        if (!openSection) {
           throw new Error('Unopened section "' + value + '" at ' + start);
+        }
 
-        if (openSection[1] !== value)
+        if (openSection[1] !== value) {
           throw new Error('Unclosed section "' + openSection[1] + '" at ' + start);
+        }
       } else if (type === 'name' || type === '{' || type === '&') {
         nonSpace = true;
       } else if (type === '=') {
@@ -235,8 +240,9 @@
     // Make sure there are no open sections when we're done.
     openSection = sections.pop();
 
-    if (openSection)
+    if (openSection) {
       throw new Error('Unclosed section "' + openSection[1] + '" at ' + scanner.pos);
+    }
 
     return nestTokens(squashTokens(tokens));
   }
@@ -341,8 +347,8 @@
    * the skipped string, which is the entire tail if no match can be made.
    */
   Scanner.prototype.scanUntil = function scanUntil(re) {
-    var index = this.tail.search(re),
-      match;
+    var index = this.tail.search(re);
+    var match;
 
     switch (index) {
       case -1:
@@ -393,11 +399,11 @@
     if (cache.hasOwnProperty(name)) {
       value = cache[name];
     } else {
-      var context = this,
-        intermediateValue,
-        names,
-        index,
-        lookupHit = false;
+      var context = this;
+      var intermediateValue;
+      var names;
+      var index;
+      var lookupHit = false;
 
       while (context) {
         if (name.indexOf('.') > 0) {
@@ -423,10 +429,11 @@
            * of an autoboxed primitive, such as the length of a string.
            **/
           while (intermediateValue != null && index < names.length) {
-            if (index === names.length - 1)
+            if (index === names.length - 1) {
               lookupHit =
                 hasProperty(intermediateValue, names[index]) ||
                 primitiveHasOwnProperty(intermediateValue, names[index]);
+            }
 
             intermediateValue = intermediateValue[names[index++]];
           }
@@ -545,13 +552,13 @@
       token = tokens[i];
       symbol = token[0];
 
-      if (symbol === '#')
+      if (symbol === '#') {
         value = this.renderSection(token, context, partials, originalTemplate);
-      else if (symbol === '^')
+      } else if (symbol === '^') {
         value = this.renderInverted(token, context, partials, originalTemplate);
-      else if (symbol === '>')
+      } else if (symbol === '>') {
         value = this.renderPartial(token, context, partials, tags);
-      else if (symbol === '&') value = this.unescapedValue(token, context);
+      } else if (symbol === '&') value = this.unescapedValue(token, context);
       else if (symbol === 'name') value = this.escapedValue(token, context);
       else if (symbol === 'text') value = this.rawValue(token);
 
@@ -600,10 +607,11 @@
         originalTemplate
       );
     } else if (isFunction(value)) {
-      if (typeof originalTemplate !== 'string')
+      if (typeof originalTemplate !== 'string') {
         throw new Error(
           'Cannot use higher-order sections without the original template'
         );
+      }
 
       // Extract the portion of the original template that the section contains.
       value = value.call(
@@ -629,8 +637,9 @@
 
     // Use JavaScript's definition of falsy. Include empty arrays.
     // See https://github.com/janl/mustache.js/issues/186
-    if (!value || (isArray(value) && value.length === 0))
+    if (!value || (isArray(value) && value.length === 0)) {
       return this.renderTokens(token[4], context, partials, originalTemplate);
+    }
   };
 
   Writer.prototype.renderPartial = function renderPartial(
@@ -642,8 +651,9 @@
     if (!partials) return;
 
     var value = isFunction(partials) ? partials(token[1]) : partials[token[1]];
-    if (value != null)
+    if (value != null) {
       return this.renderTokens(this.parse(value, tags), context, partials, value);
+    }
   };
 
   Writer.prototype.unescapedValue = function unescapedValue(token, context) {
@@ -710,7 +720,7 @@
     partials,
     send
   ) {
-    /*eslint-enable*/
+    /* eslint-enable */
 
     var result = mustache.render(template, view, partials);
 
