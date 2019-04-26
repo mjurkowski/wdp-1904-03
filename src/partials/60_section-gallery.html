@@ -12,7 +12,7 @@
         </div>
 
         <nav>
-          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
             <a
               class="nav-item nav-link active"
               id="nav-home-tab"
@@ -21,7 +21,7 @@
               role="tab"
               aria-controls="nav-home"
               aria-selected="true"
-              >Home</a
+              >Featured</a
             >
             <a
               class="nav-item nav-link"
@@ -31,7 +31,7 @@
               role="tab"
               aria-controls="nav-profile"
               aria-selected="false"
-              >Profile</a
+              >Top Seller</a
             >
             <a
               class="nav-item nav-link"
@@ -41,7 +41,17 @@
               role="tab"
               aria-controls="nav-contact"
               aria-selected="false"
-              >Contact</a
+              >Sale off</a
+            >
+            <a
+              class="nav-item nav-link"
+              id="nav-toprated-tab"
+              data-toggle="tab"
+              href="#nav-toprated"
+              role="tab"
+              aria-controls="nav-contact"
+              aria-selected="false"
+              >Sale off</a
             >
           </div>
         </nav>
@@ -52,34 +62,87 @@
             role="tabpanel"
             aria-labelledby="nav-home-tab"
           >
-            <div class="product-box">
-              <div class="photo pic-3">
-                <div class="sale">sale</div>
-                <div class="buttons">
-                  <a href="#" class="btn-main-small">Quick View</a>
-                  <a href="#" class="btn-main-small"
-                    ><i class="fa fa-shopping-basket"></i> ADD TO CART</a
-                  >
+            <script id="template-slide-list" type="x-tmpl-mustache">
+              <div class="carousel-cell" id="{{ id }}" >
+                  <div class="container">
+                      <img src={{ src }}>
+                  </div>
+              </div>
+            </script>
+
+            <script id="template-slide-list-expanded" type="x-tmpl-mustache">
+              <div class="carousel-cell" id="{{ id }}" >
+                  <div class="static-banner static-banner1">
+                      <div class="actions">
+                        <div class="outlines">
+                          <div class="icon-box">
+                            <a href="#" class="btn-outline custom-tooltip">
+                              <i class="far fa-eye"></i>
+                              <span class="tooltiptext tooltip-right">Add to watched</span>
+                            </a></div>
+                          <div class="icon-box">
+                            <a href="#" class="btn-outline custom-tooltip"><i class="far fa-heart"></i><span class="tooltiptext tooltip-right">Add to favs</span></a></div>
+                          <div class="icon-box">
+                            <a href="#" class="btn-outline custom-tooltip"><i class="fas fa-exchange-alt"></i><span class="tooltiptext tooltip-right">Add to compare</span></a></div>
+                          <div class="icon-box">
+                            <a href="#" class="btn-outline custom-tooltip"><i class="fas fa-shopping-basket"></i><span class="tooltiptext tooltip-right">Add to cart</span></a></div>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="static-banner static-banner2">
+                    <div class="content">
+                      <h5> {{name}} </h5>
+                      <div class="stars">
+                        <a href="#" class="full"></a> <a href="#" class="full"></a>
+                        <a href="#"></a> <a href="#"></a> <a href="#"></a>
+                      </div>
+                      <div class="priceCircle"><p>${{price}}</p><span>${{price}}</span></div>
+                      <div class="triangleLeft"></div>
+                      <div class="triangleRight"></div>
+                    </div>
+                  </div>
+
+                  <img src={{ src }} alt/>
+              </div>
+            </script>
+
+            <div class="galleryWrapper">
+              <div class="displayGallery">
+                <div class="main-carousel2" id="slidesContainer2">
+                  <!-- slides goes here -->
                 </div>
               </div>
-              <div class="content">
-                <h5>Aenean Ru Bristique</h5>
-                <div class="stars">
-                  <a href="#" class="full"></a> <a href="#" class="full"></a>
-                  <a href="#"></a> <a href="#"></a> <a href="#"></a>
+
+              <div class="navGallery">
+                <div class="main-carousel" id="slidesContainer">
+                  <!-- slides goes here -->
                 </div>
-              </div>
-              <div class="line"></div>
-              <div class="actions">
-                <div class="outlines">
-                  <a href="#" class="btn-outline"><i class="far fa-heart"></i></a>
-                  <a href="#" class="btn-outline active"
-                    ><i class="fas fa-exchange-alt"></i
-                  ></a>
-                </div>
-                <div class="price">
-                  <div class="btn-main-small no-hover">$ 30.00</div>
-                </div>
+
+                <button
+                  class="button button--next flickity-button flickity-prev-next-button next"
+                  type="button"
+                  aria-label="Next"
+                >
+                  <svg class="flickity-button-icon" viewBox="0 0 100 100">
+                    <path
+                      d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z"
+                      class="arrow"
+                      transform="translate(100, 100) rotate(180) "
+                    ></path>
+                  </svg>
+                </button>
+                <button
+                  class="button--previous flickity-button flickity-prev-next-button previous"
+                  type="button"
+                  aria-label="Previous"
+                >
+                  <svg class="flickity-button-icon" viewBox="0 0 100 100">
+                    <path
+                      d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z"
+                      class="arrow"
+                    ></path>
+                  </svg>
+                </button>
               </div>
             </div>
           </div>
@@ -125,6 +188,43 @@
             id="nav-contact"
             role="tabpanel"
             aria-labelledby="nav-contact-tab"
+          >
+            <div class="product-box">
+              <div class="photo pic-3">
+                <div class="sale">sale</div>
+                <div class="buttons">
+                  <a href="#" class="btn-main-small">Quick View</a>
+                  <a href="#" class="btn-main-small"
+                    ><i class="fa fa-shopping-basket"></i> ADD TO CART</a
+                  >
+                </div>
+              </div>
+              <div class="content">
+                <h5>Aenean Ru Bristique</h5>
+                <div class="stars">
+                  <a href="#" class="full"></a> <a href="#" class="full"></a>
+                  <a href="#"></a> <a href="#"></a> <a href="#"></a>
+                </div>
+              </div>
+              <div class="line"></div>
+              <div class="actions">
+                <div class="outlines">
+                  <a href="#" class="btn-outline"><i class="far fa-heart"></i></a>
+                  <a href="#" class="btn-outline active"
+                    ><i class="fas fa-exchange-alt"></i
+                  ></a>
+                </div>
+                <div class="price">
+                  <div class="btn-main-small no-hover">$ 30.00</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="nav-toprated"
+            role="tabpanel"
+            aria-labelledby="nav-toprated-tab"
           >
             <div class="product-box">
               <div class="photo pic-3">
