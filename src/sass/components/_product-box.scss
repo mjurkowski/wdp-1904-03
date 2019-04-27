@@ -9,13 +9,12 @@
 
     background: {
       color: #f4f5f7;
-      size: contain;
       position: center;
       repeat: no-repeat;
     }
 
     overflow: hidden;
-    background-size: 263px 261px;
+    background-size: cover;
     background-position: center;
 
     .sale {
