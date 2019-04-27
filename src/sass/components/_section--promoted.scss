@@ -296,6 +296,10 @@
       left: 0;
       bottom: -2px;
 
+      .active {
+        background-color: $primary !important;
+      }
+
       .arrow {
         font-size: 26px;
         display: inline;
