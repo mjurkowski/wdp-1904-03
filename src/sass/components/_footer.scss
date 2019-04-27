@@ -3,7 +3,14 @@ footer {
     background-color: $footer-bg;
     padding: 3rem 0;
 
+    .payment-card {
+      width: 100%;
+      text-align: center;
+    }
+
     .menu-wrapper {
+      width: 100%;
+
       h6 {
         color: #ffffff;
         text-transform: uppercase;
@@ -16,6 +23,8 @@ footer {
         list-style: none;
 
         li {
+          width: 152px;
+
           a {
             font-size: 14px;
             line-height: 30px;
@@ -73,6 +82,22 @@ footer {
             &:hover {
               color: $primary;
             }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 578px) {
+  footer {
+    .footer-menu {
+      text-align: center;
+
+      .menu-wrapper {
+        ul {
+          li {
+            width: 100%;
           }
         }
       }
