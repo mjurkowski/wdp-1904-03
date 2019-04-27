@@ -1,3 +1,22 @@
+.active {
+  background-color: $primary;
+  border-color: $primary;
+
+  i {
+    background-color: $primary;
+    color: #ffffff !important;
+    border-color: $primary;
+  }
+
+  .icon::before {
+    border-color: $primary;
+  }
+
+  .content {
+    color: #ffffff !important;
+  }
+}
+
 .feature-box {
   border: 1px solid #b6b6b6;
   text-align: center;
@@ -67,15 +86,6 @@
   }
 
   &:active {
-    background-color: $primary;
-    border-color: $primary;
-
-    .icon::before {
-      border-color: $primary;
-    }
-
-    .content {
-      color: #ffffff;
-    }
+    @extend .active;
   }
 }
