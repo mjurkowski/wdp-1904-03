@@ -2,12 +2,6 @@
   padding: 5rem 0;
 }
 
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
 .feedback-title {
   position: relative;
 
