@@ -40,7 +40,12 @@ header {
     }
   }
 
-  .company-claim {
+  .company-claim-mobile {
+    display: none;
+  }
+
+  .company-claim,
+  .company-claim-mobile {
     background-color: $header-bg;
 
     img {
@@ -343,12 +348,24 @@ header {
               justify-content: flex-end;
               padding-right: 10px;
             }
+
+            .icon-label {
+              display: none;
+            }
           }
         }
       }
     }
-  }
   
+    .company-claim {
+      display: none;
+    }
+
+    .company-claim-mobile {
+      display: block;
+    }
+  }
+
   .menu-bar {
     display: none;
   }
