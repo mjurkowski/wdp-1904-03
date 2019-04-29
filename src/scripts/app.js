@@ -15,35 +15,64 @@ hamburgerToggle.addEventListener('click', toggleSidebar);
 
 //  star
 
-const productRating = document.getElementById('product-rating');
+// const productRating = document.getElementById('product-rating');
+const productRating = document.querySelectorAll('.stars');
 const stars = productRating.querySelectorAll('.star');
 let rating = 0;
 
-productRating.addEventListener('click', e => {
-  if (!e.target.matches('.star')) return;
-  e.preventDefault();
+document.querySelectorAll('.stars').forEach(productRating => {
+  productRating.querySelectorAll('a').forEach(stars => {
+    stars.addEventListener('click', e => {
+      if (!e.target.matches('.star')) return;
+      e.preventDefault();
 
-  const starID = parseInt(e.target.getAttribute('data-star'));
+      const starID = parseInt(e.target.getAttribute('data-star'));
 
-  removeClassFromElements('is-active', stars);
-  highlightStars(starID);
+      removeClassFromElements('is-active', stars);
+      highlightStars(starID);
 
-  rating = starID;
+      rating = starID;
+    });
+    stars.addEventListener('mouseover', e => {
+      if (!e.target.matches('.star')) return;
+
+      removeClassFromElements('is-active', stars);
+      const starID = parseInt(e.target.getAttribute('data-star'));
+      highlightStars(starID);
+    });
+    stars.addEventListener('mouseleave', e => {
+      removeClassFromElements('is-active', stars);
+      if (rating === 0) return;
+      highlightStars(rating);
+    });
+  });
 });
 
-productRating.addEventListener('mouseover', e => {
-  if (!e.target.matches('.star')) return;
+// productRating.addEventListener('click', e => {
+//   if (!e.target.matches('.star')) return;
+//   e.preventDefault();
 
-  removeClassFromElements('is-active', stars);
-  const starID = parseInt(e.target.getAttribute('data-star'));
-  highlightStars(starID);
-});
+//   const starID = parseInt(e.target.getAttribute('data-star'));
 
-productRating.addEventListener('mouseleave', e => {
-  removeClassFromElements('is-active', stars);
-  if (rating === 0) return;
-  highlightStars(rating);
-});
+//   removeClassFromElements('is-active', stars);
+//   highlightStars(starID);
+
+//   rating = starID;
+// });
+
+// productRating.addEventListener('mouseover', e => {
+//   if (!e.target.matches('.star')) return;
+
+//   removeClassFromElements('is-active', stars);
+//   const starID = parseInt(e.target.getAttribute('data-star'));
+//   highlightStars(starID);
+// });
+
+// productRating.addEventListener('mouseleave', e => {
+//   removeClassFromElements('is-active', stars);
+//   if (rating === 0) return;
+//   highlightStars(rating);
+// });
 
 function highlightStars (starID) {
   for (let i = 0; i < starID; i++) {
