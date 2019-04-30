@@ -1,5 +1,6 @@
 footer {
   .footer-menu {
+    text-align: center;
     background-color: $footer-bg;
     padding: 3rem 0;
 
@@ -23,7 +24,8 @@ footer {
         list-style: none;
 
         li {
-          width: 152px;
+          width: 100%;
+          white-space: nowrap;
 
           a {
             font-size: 14px;
@@ -82,22 +84,6 @@ footer {
             &:hover {
               color: $primary;
             }
-          }
-        }
-      }
-    }
-  }
-}
-
-@media only screen and (max-width: 578px) {
-  footer {
-    .footer-menu {
-      text-align: center;
-
-      .menu-wrapper {
-        ul {
-          li {
-            width: 100%;
           }
         }
       }
