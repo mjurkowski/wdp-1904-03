@@ -253,8 +253,17 @@
       height: 505px;
       position: relative;
 
-      .products-carousel {
+      .products-carousel,
+      .products-carousel-mobile {
         height: 505px;
+
+        .flickity-viewport {
+          height: 500px !important;
+        }
+      }
+
+      .products-carousel-mobile {
+        display: none;
       }
 
       .title {
@@ -401,6 +410,16 @@
     .hot-deals {
       display: none;
     }
+
+    .highlighted-product {
+      .products-carousel-mobile {
+        display: block !important;
+      }
+
+      .products-carousel {
+        display: none;
+      }
+    }
   }
 }
 
@@ -414,6 +433,11 @@
       height: 398px !important;
 
       .products-carousel {
+        display: none;
+      }
+
+      .products-carousel-mobile {
+        display: block !important;
         height: 362px !important;
 
         .carousel-cell {
@@ -469,6 +493,12 @@
 
     .highlighted-product {
       .products-carousel {
+        display: none;
+      }
+
+      .products-carousel-mobile {
+        display: block;
+
         .carousel-cell {
           width: 100%;
 
