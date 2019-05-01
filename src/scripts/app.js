@@ -14,15 +14,14 @@ hamburgerMobile.addEventListener('click', toggleSidebar);
 hamburgerToggle.addEventListener('click', toggleSidebar);
 
 //  star
-
 // const productRating = document.getElementById('product-rating');
-const productRating = document.querySelectorAll('.stars');
-const stars = productRating.querySelectorAll('.star');
+// const productRating = document.querySelectorAll('.stars');
+const stars = document.querySelectorAll('.star');
 let rating = 0;
 
 document.querySelectorAll('.stars').forEach(productRating => {
-  productRating.querySelectorAll('a').forEach(stars => {
-    stars.addEventListener('click', e => {
+  productRating.querySelectorAll('.star').forEach(el => {
+    el.addEventListener('click', e => {
       if (!e.target.matches('.star')) return;
       e.preventDefault();
 
@@ -33,14 +32,14 @@ document.querySelectorAll('.stars').forEach(productRating => {
 
       rating = starID;
     });
-    stars.addEventListener('mouseover', e => {
+    el.addEventListener('mouseover', e => {
       if (!e.target.matches('.star')) return;
 
       removeClassFromElements('is-active', stars);
       const starID = parseInt(e.target.getAttribute('data-star'));
       highlightStars(starID);
     });
-    stars.addEventListener('mouseleave', e => {
+    el.addEventListener('mouseleave', e => {
       removeClassFromElements('is-active', stars);
       if (rating === 0) return;
       highlightStars(rating);
