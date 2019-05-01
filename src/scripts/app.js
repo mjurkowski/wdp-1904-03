@@ -97,12 +97,14 @@ hamburgerToggle.addEventListener('click', toggleSidebar);
     hash: true,
     imagesLoaded: true,
     pageDots: false,
-    asNavFor: elem2
+    asNavFor: elem2,
+    groupCells: false
   });
 
   var flkty2 = new Flickity(elem2, {
     prevNextButtons: false,
-    pageDots: false
+    pageDots: false,
+    groupCells: false
   });
 
   var nextButton = document.querySelector('.button--next');

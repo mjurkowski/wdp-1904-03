@@ -167,163 +167,179 @@
       left: 7px;
       top: 120px;
       background: rgba(248, 246, 246, 0.3);
+
+      a {
+        i {
+          background-color: rgba(0, 0, 0, 0);
+          color: #000 !important;
+          border: none;
+        }
+
+        &:hover {
+          background: #000;
+
+          i {
+            color: #fff !important;
+          }
+        }
+      }
     }
+  }
 
-    .static-banner2 {
-      right: 0;
-      bottom: 32px;
-      color: black;
-      /* Style for "Rectangle" */
-      width: 249px;
-      height: 106px;
-      box-shadow: 0 3px 6px rgba(1, 2, 2, 0.24);
-      background-color: #ffffff;
+  .static-banner2 {
+    right: 0;
+    bottom: 32px;
+    color: black;
+    /* Style for "Rectangle" */
+    width: 249px;
+    height: 106px;
+    box-shadow: 0 3px 6px rgba(1, 2, 2, 0.24);
+    background-color: #ffffff;
 
-      .content {
-        text-align: center;
-        padding-top: 20px;
+    .content {
+      text-align: center;
+      padding-top: 20px;
 
-        h5 {
-          color: #2a2a2a;
-          font-size: 16px;
-          font-weight: 700;
-          line-height: 24px;
-          letter-spacing: 1px;
+      h5 {
+        color: #2a2a2a;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px;
+        letter-spacing: 1px;
+      }
+
+      .triangleLeft {
+        width: 0;
+        height: 0;
+        border-top: 29px solid black;
+        border-right: 29px solid transparent;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .triangleRight {
+        width: 0;
+        height: 0;
+        border-bottom: 29px solid black;
+        border-left: 29px solid transparent;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
+
+      .priceCircle {
+        width: 105px;
+        height: 105px;
+        background-color: #2a2a2a;
+        opacity: 0.6;
+        color: white;
+        border-radius: 50%;
+        position: absolute;
+        left: 72px;
+        top: -90px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        span {
+          font-size: 14px;
+          color: #ffffff;
+          text-decoration: line-through;
         }
 
-        .triangleLeft {
-          width: 0;
-          height: 0;
-          border-top: 29px solid black;
-          border-right: 29px solid transparent;
-          position: absolute;
-          top: 0;
-          left: 0;
-        }
-
-        .triangleRight {
-          width: 0;
-          height: 0;
-          border-bottom: 29px solid black;
-          border-left: 29px solid transparent;
-          position: absolute;
-          bottom: 0;
-          right: 0;
-        }
-
-        .priceCircle {
-          width: 105px;
-          height: 105px;
-          background-color: #2a2a2a;
-          opacity: 0.6;
+        p {
+          font-size: 17px;
+          text-transform: uppercase;
           color: white;
-          border-radius: 50%;
-          position: absolute;
-          left: 72px;
-          top: -90px;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-
-          span {
-            font-size: 14px;
-            color: #ffffff;
-            text-decoration: line-through;
-          }
-
-          p {
-            font-size: 17px;
-            text-transform: uppercase;
-            color: white;
-          }
         }
+      }
 
-        .stars {
-          line-height: 24px;
-          font-size: 16px;
+      .stars {
+        line-height: 24px;
+        font-size: 16px;
 
-          a {
-            text-decoration: none;
-            color: rgb(42, 42, 42);
-            @extend .far;
-            @extend .fa-star;
+        a {
+          text-decoration: none;
+          color: rgb(42, 42, 42);
+          @extend .far;
+          @extend .fa-star;
 
-            &.full {
-              @extend .fas;
-            }
+          &.full {
+            @extend .fas;
           }
         }
       }
     }
+  }
 
-    .main-carousel {
-      width: 100%;
-      height: 88px;
+  .main-carousel {
+    width: 100%;
+    height: 88px;
+    margin-right: 10px;
+    background: #fafafa;
+    padding: 3px 22px;
+
+    .carousel-cell {
       margin-right: 10px;
-      background: #fafafa;
-      padding: 3px 22px;
-
-      .carousel-cell {
-        margin-right: 10px;
-        margin-top: 9px;
-        height: 70px;
-        width: 70px;
-        opacity: 0.3;
-      }
-
-      img {
-        display: block;
-        width: 70px;
-        height: 70px;
-        margin: 0 auto;
-        object-fit: cover;
-      }
-
-      @media (max-width: 300px) {
-        /* half-width cells for larger devices */
-        .carousel-cell {
-          width: 33%;
-        }
-      }
-    }
-
-    .carousel-nav .carousel-cell.is-nav-selected,
-    .carousel-cell.is-selected {
-      opacity: 1;
-    }
-
-    .flickity-prev-next-button {
+      margin-top: 9px;
       height: 70px;
-      border-radius: 1px;
-      background: #333;
-      transform: none;
+      width: 70px;
+      opacity: 0.3;
     }
 
-    .flickity-prev-next-button:hover {
-      background: #f90;
+    img {
+      display: block;
+      width: 70px;
+      height: 70px;
+      margin: 0 auto;
+      object-fit: cover;
     }
 
-    /* arrow color */
-
-    .flickity-prev-next-button .arrow {
-      fill: white;
+    @media (max-width: 300px) {
+      /* half-width cells for larger devices */
+      .carousel-cell {
+        width: 33%;
+      }
     }
+  }
 
-    .flickity-prev-next-button.no-svg {
-      color: white;
-    }
+  .carousel-nav .carousel-cell.is-nav-selected,
+  .carousel-cell.is-selected {
+    opacity: 1;
+  }
 
-    /* position outside */
+  .flickity-prev-next-button {
+    height: 70px;
+    border-radius: 1px;
+    background: #333;
+    transform: none;
+  }
 
-    .flickity-prev-next-button.previous {
-      left: 22px;
-      top: 83%;
-    }
+  .flickity-prev-next-button:hover {
+    background: #f90;
+  }
 
-    .flickity-prev-next-button.next {
-      right: 22px;
-      top: 83%;
-    }
+  /* arrow color */
+
+  .flickity-prev-next-button .arrow {
+    fill: white;
+  }
+
+  .flickity-prev-next-button.no-svg {
+    color: white;
+  }
+
+  /* position outside */
+
+  .flickity-prev-next-button.previous {
+    left: 22px;
+    top: 83%;
+  }
+
+  .flickity-prev-next-button.next {
+    right: 22px;
+    top: 83%;
   }
 }
