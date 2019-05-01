@@ -3,7 +3,7 @@ import '../scripts/gallery';
 
 console.log('hello');
 
-var toggleSidebar = function() {
+var toggleSidebar = function () {
   var menuMobile = document.querySelector('#toggle-menu');
   menuMobile.classList.toggle('active');
 };

@@ -90,13 +90,13 @@ var flkty2 = new Flickity(elem2, {
 });
 
 var nextButton = document.querySelector('.section--gallery .button--next');
-nextButton.addEventListener('click', function() {
+nextButton.addEventListener('click', function () {
   flkty2.next(true);
   flkty.next(true);
 });
 
 var previousButton = document.querySelector('.section--gallery .button--previous');
-previousButton.addEventListener('click', function() {
+previousButton.addEventListener('click', function () {
   flkty2.previous(true);
   flkty.previous(true);
 });
