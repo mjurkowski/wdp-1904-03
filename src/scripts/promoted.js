@@ -12,18 +12,11 @@ const leftCarousel = new Flickity('.hot-deals-carousel', {
   draggable: false
 });
 
-const rightCarousel = new Flickity('.products-carousel', {
+let rightCarousel = new Flickity('.products-carousel', {
   pageDots: false,
   wrapAround: true,
   prevNextButtons: false,
-  draggable: false
-});
-
-const rightCarouselMobile = new Flickity('.products-carousel-mobile', {
-  pageDots: false,
-  wrapAround: true,
-  prevNextButtons: false,
-  draggable: true
+  draggable: window.innerWidth < 992
 });
 
 const pointsBox = document.querySelectorAll('.section--promoted .hot-deals li');
@@ -40,11 +33,26 @@ carouselCells.forEach(cell =>
   })
 );
 
-leftArrow.addEventListener('click', () => {
-  rightCarousel.previous();
-  rightCarouselMobile.previous();
-});
-rightArrow.addEventListener('click', () => {
-  rightCarousel.next();
-  rightCarouselMobile.next();
+leftArrow.addEventListener('click', () => rightCarousel.previous());
+
+rightArrow.addEventListener('click', () => rightCarousel.next());
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth < 992) {
+    rightCarousel.destroy();
+    rightCarousel = new Flickity('.products-carousel', {
+      pageDots: false,
+      wrapAround: true,
+      prevNextButtons: false,
+      draggable: true
+    });
+  } else {
+    rightCarousel.destroy();
+    rightCarousel = new Flickity('.products-carousel', {
+      pageDots: false,
+      wrapAround: true,
+      prevNextButtons: false,
+      draggable: false
+    });
+  }
 });
