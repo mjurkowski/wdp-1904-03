@@ -14,10 +14,6 @@ hamburgerMobile.addEventListener('click', toggleSidebar);
 hamburgerToggle.addEventListener('click', toggleSidebar);
 
 //  star
-// const productRating = document.getElementById('product-rating');
-// const productRating = document.querySelectorAll('.stars');
-const stars = document.querySelectorAll('.star');
-let rating = 0;
 
 document.querySelectorAll('.stars').forEach(productRating => {
   productRating.querySelectorAll('.star').forEach(el => {
@@ -26,62 +22,28 @@ document.querySelectorAll('.stars').forEach(productRating => {
       e.preventDefault();
 
       const starID = parseInt(e.target.getAttribute('data-star'));
-
-      removeClassFromElements('is-active', stars);
-      highlightStars(starID);
-
-      rating = starID;
+      productRating.setAttribute('data-rated', starID);
     });
     el.addEventListener('mouseover', e => {
       if (!e.target.matches('.star')) return;
-
-      removeClassFromElements('is-active', stars);
       const starID = parseInt(e.target.getAttribute('data-star'));
-      highlightStars(starID);
+      setActiveStars(productRating, starID || 0);
     });
     el.addEventListener('mouseleave', e => {
-      removeClassFromElements('is-active', stars);
-      if (rating === 0) return;
-      highlightStars(rating);
+      const rate = productRating.getAttribute('data-rated');
+      setActiveStars(productRating, rate || 0);
     });
   });
 });
 
-// productRating.addEventListener('click', e => {
-//   if (!e.target.matches('.star')) return;
-//   e.preventDefault();
-
-//   const starID = parseInt(e.target.getAttribute('data-star'));
-
-//   removeClassFromElements('is-active', stars);
-//   highlightStars(starID);
-
-//   rating = starID;
-// });
-
-// productRating.addEventListener('mouseover', e => {
-//   if (!e.target.matches('.star')) return;
-
-//   removeClassFromElements('is-active', stars);
-//   const starID = parseInt(e.target.getAttribute('data-star'));
-//   highlightStars(starID);
-// });
-
-// productRating.addEventListener('mouseleave', e => {
-//   removeClassFromElements('is-active', stars);
-//   if (rating === 0) return;
-//   highlightStars(rating);
-// });
-
-function highlightStars (starID) {
-  for (let i = 0; i < starID; i++) {
-    stars[i].classList.add('is-active');
+function setActiveStars (starsNode, rate) {
+  const starsInContainer = starsNode.querySelectorAll('.star');
+  const stars = Array.prototype.slice.call(starsInContainer);
+  for (var i = 0; stars.length; i++) {
+    if (i < rate) {
+      stars[i].classList.add('is-active');
+    } else {
+      stars[i].classList.remove('is-active');
+    }
   }
 }
-
-function removeClassFromElements (className, elements) {
-  for (let i = 0; i < elements.length; i++) {
-    elements[i].classList.remove(className);
-  }
-}
-//
