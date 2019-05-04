@@ -39,7 +39,7 @@ document.querySelectorAll('.stars').forEach(productRating => {
 function setActiveStars (starsNode, rate) {
   const starsInContainer = starsNode.querySelectorAll('.star');
   const stars = Array.prototype.slice.call(starsInContainer);
-  for (var i = 0; stars.length; i++) {
+  for (var i = 0; i < stars.length; i++) {
     if (i < rate) {
       stars[i].classList.add('is-active');
     } else {
