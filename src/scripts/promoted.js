@@ -38,21 +38,6 @@ leftArrow.addEventListener('click', () => rightCarousel.previous());
 rightArrow.addEventListener('click', () => rightCarousel.next());
 
 window.addEventListener('resize', () => {
-  if (window.innerWidth < 992) {
-    rightCarousel.destroy();
-    rightCarousel = new Flickity('.products-carousel', {
-      pageDots: false,
-      wrapAround: true,
-      prevNextButtons: false,
-      draggable: true
-    });
-  } else {
-    rightCarousel.destroy();
-    rightCarousel = new Flickity('.products-carousel', {
-      pageDots: false,
-      wrapAround: true,
-      prevNextButtons: false,
-      draggable: false
-    });
-  }
+  rightCarousel.options.draggable = window.innerWidth < 992;
+  rightCarousel.updateDraggable();
 });
