@@ -1,3 +1,5 @@
+import '../scripts/promoted';
+
 console.log('hello');
 
 // toggle-menu on mobile
