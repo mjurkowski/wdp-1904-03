@@ -25,6 +25,7 @@ document.querySelectorAll('.stars').forEach(productRating => {
 
       const starID = parseInt(e.target.getAttribute('data-star'));
       productRating.setAttribute('data-rated', starID);
+      removeBlackStars(productRating);
     });
     el.addEventListener('mouseover', e => {
       if (!e.target.matches('.star')) return;
@@ -38,14 +39,21 @@ document.querySelectorAll('.stars').forEach(productRating => {
   });
 });
 
-function setActiveStars (starsNode, rate) {
+const setActiveStars = (starsNode, rate) => {
   const starsInContainer = starsNode.querySelectorAll('.star');
   const stars = Array.prototype.slice.call(starsInContainer);
-  for (var i = 0; i < stars.length; i++) {
+  for (let i = 0; i < stars.length; i++) {
     if (i < rate) {
       stars[i].classList.add('is-active');
     } else {
       stars[i].classList.remove('is-active');
     }
   }
-}
+};
+
+const removeBlackStars = starsNode => {
+  const blackStars = starsNode.querySelectorAll('.full');
+  for (let i = 0; i < blackStars.length; i++) {
+    blackStars[i].classList.remove('full');
+  }
+};
