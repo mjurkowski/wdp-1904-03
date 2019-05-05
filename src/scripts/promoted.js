@@ -12,11 +12,11 @@ const leftCarousel = new Flickity('.hot-deals-carousel', {
   draggable: false
 });
 
-const rightCarousel = new Flickity('.products-carousel', {
+let rightCarousel = new Flickity('.products-carousel', {
   pageDots: false,
   wrapAround: true,
   prevNextButtons: false,
-  draggable: false
+  draggable: window.innerWidth < 992
 });
 
 const pointsBox = document.querySelectorAll('.section--promoted .hot-deals li');
@@ -34,4 +34,10 @@ carouselCells.forEach(cell =>
 );
 
 leftArrow.addEventListener('click', () => rightCarousel.previous());
+
 rightArrow.addEventListener('click', () => rightCarousel.next());
+
+window.addEventListener('resize', () => {
+  rightCarousel.options.draggable = window.innerWidth < 992;
+  rightCarousel.updateDraggable();
+});
