@@ -84,16 +84,12 @@ header {
         color: #ffffff;
         text-decoration: none;
 
-<<<<<<< HEAD
-        .cart-container {
-=======
         .cart-icon {
           @extend %transition-duration;
           background-color: $primary;
           width: 55px;
           height: 50px;
           border-radius: 3px;
->>>>>>> Justified hover animations (complete commit)
           display: flex;
           align-items: center;
 
@@ -367,7 +363,7 @@ header {
         }
       }
     }
-  
+
     .company-claim {
       display: none;
     }
