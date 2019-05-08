@@ -12,6 +12,7 @@ header {
         line-height: 55px;
 
         a {
+          @extend %transition-duration;
           color: #ffffff;
           font-size: 13px;
 
@@ -83,7 +84,12 @@ header {
         color: #ffffff;
         text-decoration: none;
 
-        .cart-container {
+        .cart-icon {
+          @extend %transition-duration;
+          background-color: $primary;
+          width: 55px;
+          height: 50px;
+          border-radius: 3px;
           display: flex;
           align-items: center;
 
@@ -151,6 +157,7 @@ header {
           align-items: stretch;
 
           a {
+            @extend %transition-duration;
             color: $text-color;
             text-transform: uppercase;
             font-size: 12px;
@@ -195,10 +202,12 @@ header {
           color: #ffffff;
         }
 
+        i {
+          padding: 0 5px;
+        }
+
         i:first-child {
           color: $primary;
-          position: absolute;
-          left: 10px;
           z-index: 0;
         }
 
@@ -208,27 +217,49 @@ header {
           z-index: 0;
         }
 
-        select {
-          -webkit-appearance: none;
-          border: none;
-          background-color: transparent;
-          padding: 5px 30px 5px 35px;
-          font-size: 14px;
-          position: relative;
-          z-index: 1;
-          cursor: pointer;
-
-          &:hover {
-            color: #ffffff;
-          }
-
-          &:focus {
-            outline: none;
-          }
-
-          option {
-            background-color: #dea55c;
-            color: #ffffff;
+        ul {
+          list-style-type: none;
+          margin-bottom: 0;
+          padding-left: 0;
+          height: 100%;
+          li {
+            background-color: white;
+            height: 100%;
+            padding: 9px 0;
+            ul {
+              display: none;
+              position: relative;
+              top: 11px;
+              li {
+                text-align: center;
+                height: fit-content;
+                border: 1px solid $form-border-color;
+                border-top: none;
+                &:hover {
+                  a {
+                    color: white;
+                  }
+                }
+                a {
+                  &:hover {
+                    text-decoration: none;
+                  }
+                }
+              }
+            }
+            &:hover {
+              ul {
+                display: block;
+                z-index: 10;
+              }
+            }
+            &:hover {
+              background-color: #dca35b;
+              color: white;
+              i:first-child {
+                color: white;
+              }
+            }
           }
         }
       }
@@ -356,7 +387,7 @@ header {
         }
       }
     }
-  
+
     .company-claim {
       display: none;
     }
