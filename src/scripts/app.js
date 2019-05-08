@@ -1,5 +1,5 @@
 import '../scripts/promoted';
-
+import '../scripts/feedback';
 console.log('hello');
 
 // toggle-menu on mobile
