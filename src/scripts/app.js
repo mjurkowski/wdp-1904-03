@@ -19,35 +19,17 @@ hamburgerToggle.addEventListener('click', toggleSidebar);
 document.addEventListener('DOMContentLoaded', initCarousel);
 
 function initCarousel() {
-  let queryXL = window.matchMedia('(min-width: 1200px)');
+  let groupCells = 1;
 
-  let queryL = window.matchMedia('(min-width: 993px) and (max-width: 1199px)');
-
-  let queryM = window.matchMedia('(min-width:767px) and (max-width: 992px)');
-
-  let queryS = window.matchMedia('(max-width: 766px)');
-
-  if (queryS.matches) {
-    var flkty = new Flickity('.main-carousel', {
-      groupCells: 1
-    });
+  if (window.matchMedia('(min-width:767px) and (max-width: 992px)').matches) {
+    groupCells = 2;
+  } else if (window.matchMedia('(min-width: 993px) and (max-width: 1199px)').matches) {
+    groupCells = 3;
+  } else if (window.matchMedia('(min-width: 1200px)').matches) {
+    groupCells = 4;
   }
 
-  if (queryM.matches) {
-    var flkty = new Flickity('.main-carousel', {
-      groupCells: 2
-    });
-  }
-
-  if (queryL.matches) {
-    var flkty = new Flickity('.main-carousel', {
-      groupCells: 3
-    });
-  }
-
-  if (queryXL.matches) {
-    var flkty = new Flickity('.main-carousel', {
-      groupCells: 4
-    });
-  }
+  var flkty = new Flickity('.main-carousel', {
+    groupCells: groupCells
+  });
 }
