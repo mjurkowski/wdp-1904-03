@@ -1,6 +1,5 @@
-import '../scripts/promoted';
-import '../scripts/feedback';
 import './carousels';
+import './feedback';
 console.log('hello');
 
 // toggle-menu on mobile
