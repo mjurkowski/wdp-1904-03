@@ -50,40 +50,6 @@
     border-bottom: 4px solid $primary;
   }
 }
-.feedback-carousel.flickity-page-dots {
-  //position: absolute;
-  display: flex;
-  justify-content: flex-end;
-  align-content: flex-start;
-  width: 100%;
-  height: 20px;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  text-align: center;
-  line-height: 1;
-  //right: -548px;
-  //top: 0;
-  .dotAll {
-    margin-top: 8px;
-  }
-  .dot {
-    display: inline;
-    width: 13px;
-    height: 13px;
-    margin: 0;
-    margin-right: 8px;
-    background-color: #e2e2e2;
-    border-radius: 50%;
-    opacity: 0.4;
-    cursor: pointer;
-  }
-
-  .dot.is-selected {
-    opacity: 1;
-    background-color: $primary !important;
-  }
-}
 .dots {
   .dotAll {
     display: flex;
@@ -95,15 +61,19 @@
     transform: translateY(10px);
     .dot {
       display: inline-block;
-      margin-left: 0.5rem;
+      margin-left: 12px;
       border: none;
       display: block;
       width: 13px;
       height: 13px;
       border-radius: 6px;
-      background-color: #e1e1e1;
       padding: 0;
-
+      outline: none;
+      cursor: pointer;
+      .dot.is-selected {
+        opacity: 1;
+        background-color: $primary;
+      }
       &:active,
       &:hover {
         background-color: $primary;

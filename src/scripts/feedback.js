@@ -9,6 +9,21 @@ const feedbackCarousel = new Flickity('.feedback-carousel', {
   prevNextButtons: false,
   draggable: false
 });
-firstDot.addEventListener('click', () => feedbackCarousel.select(0));
-secondDot.addEventListener('click', () => feedbackCarousel.select(1));
-thirdDot.addEventListener('click', () => feedbackCarousel.select(2));
+firstDot.addEventListener('click', e => {
+  feedbackCarousel.select(0);
+  firstDot.classList.add('active');
+  secondDot.classList.remove('active');
+  thirdDot.classList.remove('active');
+});
+secondDot.addEventListener('click', () => {
+  feedbackCarousel.select(1);
+  secondDot.classList.add('active');
+  firstDot.classList.remove('active');
+  thirdDot.classList.remove('active');
+});
+thirdDot.addEventListener('click', () => {
+  feedbackCarousel.select(2);
+  thirdDot.classList.add('active');
+  firstDot.classList.remove('active');
+  secondDot.classList.remove('active');
+});
