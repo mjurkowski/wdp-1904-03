@@ -5,31 +5,30 @@
   padding: 20px;
 
   .brands-container {
-    padding: 10px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    padding: 10px 0;
     border-bottom: 1px solid #e1e1e1;
     border-top: 1px solid #e1e1e1;
-
-    .brands-arrow {
-      text-decoration: none;
-      position: relative;
-      color: white;
-      border: none;
-      padding: 10% 10px 0 10px;
-      background-color: #333;
-
-      i {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-    }
   }
-
+  .carousel-cell {
+    width: 150px;
+    height: 115px;
+  }
+  .flickity-button {
+    background: #333;
+    border-radius: 0;
+    height: 114px;
+    width: 20px;
+    padding: 10% 10px 0 10px;
+  }
+  .flickity-button-icon {
+    fill: #fff;
+  }
+  .flickity-prev-next-button.previous {
+    left: 0;
+  }
+  .flickity-prev-next-button.next {
+    right: 0;
+  }
   .images-brands {
     padding: 10% 10px 0 10px;
     margin: 15px;

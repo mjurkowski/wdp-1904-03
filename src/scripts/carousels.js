@@ -1,5 +1,5 @@
 import Flickity from 'flickity';
-
+// promoted
 const carouselCells = document.querySelectorAll('.images');
 const leftArrow = document.querySelector('.arrow-left');
 const rightArrow = document.querySelector('.arrow-right');
@@ -41,3 +41,12 @@ window.addEventListener('resize', () => {
   rightCarousel.options.draggable = window.innerWidth < 992;
   rightCarousel.updateDraggable();
 });
+
+// brands
+const brandsContainer = document.querySelector('.brands-carousel');
+const brandsCarousel = new Flickity(brandsContainer, {
+  pageDots: false,
+  wrapAround: true,
+  groupCells: true
+});
+brandsCarousel.playPlayer();
