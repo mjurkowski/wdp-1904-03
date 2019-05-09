@@ -69,3 +69,37 @@
 .brand-6 {
   background-image: url("../images/brand_6.png");
 }
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .section--brands {
+    .carousel-cell {
+      width: 350px;
+      height: 160px;
+    }
+    .images-brands {
+      margin-left: 75px;
+    }
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .section--brands {
+    .carousel-cell {
+      width: 300px;
+      height: 150px;
+    }
+    .images-brands {
+      margin: 15px 25px;
+    }
+  }
+}
+@media (max-width: 767px) {
+  .section--brands {
+    .carousel-cell {
+      width: 260px;
+      height: 150px;
+    }
+    .images-brands {
+      margin: 15px 30px;
+    }
+  }
+}
