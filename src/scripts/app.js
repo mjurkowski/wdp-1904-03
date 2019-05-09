@@ -1,4 +1,5 @@
 import './carousels';
+import './feedback';
 console.log('hello');
 
 // toggle-menu on mobile
