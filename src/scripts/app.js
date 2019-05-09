@@ -1,5 +1,4 @@
-import '../scripts/promoted';
-
+import './carousels';
 console.log('hello');
 
 // toggle-menu on mobile
