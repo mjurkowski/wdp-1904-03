@@ -57,7 +57,7 @@
     margin: 0;
     padding: 0 0 0 1rem;
     list-style: none;
-    background-color: #ffffff;
+    background-color: #fff;
     transform: translateY(10px);
     .dot {
       display: inline-block;
@@ -69,15 +69,14 @@
       border-radius: 6px;
       padding: 0;
       outline: none;
+      background-color: #f1f1f1;
       cursor: pointer;
-      .dot.is-selected {
-        opacity: 1;
-        background-color: $primary;
-      }
-      &:active,
       &:hover {
         background-color: $primary;
       }
+    }
+    .active {
+      background-color: $primary;
     }
   }
 }

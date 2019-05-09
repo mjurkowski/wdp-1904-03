@@ -7,7 +7,11 @@ const feedbackCarousel = new Flickity('.feedback-carousel', {
   pageDots: false,
   wrapAround: true,
   prevNextButtons: false,
-  draggable: false
+  draggable: window.innerWidth < 992
+});
+window.addEventListener('resize', () => {
+  feedbackCarousel.options.draggable = window.innerWidth < 992;
+  feedbackCarousel.updateDraggable();
 });
 firstDot.addEventListener('click', e => {
   feedbackCarousel.select(0);
