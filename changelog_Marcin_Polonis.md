@@ -54,7 +54,7 @@
 
 **Recommendation:** You have to write JS code for star-rating system. We do not use any plugin, we write our own script for this.
 
-####Requirements####
+**Requirements:**
 
 - At this moment, on the site all products have 2 black stars which mean "this product is rated on average 2 stars".
 - On hover and after clicking, there will not be any black star, only creamy (or the same color as for hover buttons), and they will mean "my rating".
