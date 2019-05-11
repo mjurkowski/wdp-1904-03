@@ -84,16 +84,12 @@ header {
         color: #ffffff;
         text-decoration: none;
 
-        .cart-icon {
-          @extend %transition-duration;
-          background-color: $primary;
-          width: 55px;
-          height: 50px;
-          border-radius: 3px;
+        .cart-container {
           display: flex;
           align-items: center;
 
           .cart-icon {
+            @extend %transition-duration;
             background-color: $primary;
             width: 55px;
             height: 50px;
