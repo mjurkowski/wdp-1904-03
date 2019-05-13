@@ -417,6 +417,23 @@
   }
 }
 
+.carousel-cell {
+  height: 100%;
+  width: 100%;
+}
+
+.carousel-1 .flickity-viewport {
+  height: 1200px;
+}
+
+.carousel-2 .flickity-viewport {
+  height: 1200px;
+}
+
+.hide {
+  display: none;
+}
+
 // .dots {
 //   ul {
 //     margin: 0;
