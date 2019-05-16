@@ -43,7 +43,7 @@ function registerTabListeners () {
 }
 
 function registerDotListeners () {
-  const navAnchor = document.querySelectorAll('.dot');
+  const navAnchor = document.querySelectorAll('.dot-button');
   navAnchor.forEach((anchor, index) => {
     anchor.addEventListener('click', function (e) {
       changeClassActive(e);
@@ -67,5 +67,5 @@ function resetClassActive () {
   document
     .querySelector('.dots-active-products')
     .classList.remove('dots-active-products');
-  document.querySelectorAll('.dot')[0].classList.add('dots-active-products');
+  document.querySelectorAll('.dot-button')[0].classList.add('dots-active-products');
 }
