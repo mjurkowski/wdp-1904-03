@@ -34,6 +34,7 @@
   .menu {
     text-align: center;
     margin-right: 0;
+
     ul {
       margin: 0;
       padding: 0;
@@ -51,6 +52,7 @@
           text-decoration: none;
           font-size: 18px;
           display: block;
+
           &::before {
             @extend %transition-duration;
             content: "";
@@ -61,6 +63,7 @@
             border-bottom: 4px solid $primary;
             opacity: 0;
           }
+
           &.active,
           &:hover {
             &::before {
@@ -69,9 +72,6 @@
           }
         }
       }
-    }
-    @media (min-width: 1200px) {
-      margin-right: 120px;
     }
   }
 
@@ -102,9 +102,47 @@
         }
       }
     }
+
+    @media screen and (max-width: 850px) {
+      text-align: center;
+    }
   }
 
-  @media screen and (max-width: 850px) {
-    text-align: center;
+  .dots-main {
+    .dots {
+      display: flex;
+      flex-direction: row;
+      margin: 0;
+      padding: 0 0 0 1rem;
+      list-style: none;
+      background-color: #fff;
+      transform: translateY(10px);
+
+      .dot-button {
+        display: inline-block;
+        margin-left: 12px;
+        border: none;
+        display: block;
+        width: 13px;
+        height: 13px;
+        border-radius: 6px;
+        padding: 0;
+        outline: none;
+        background-color: #e1e1e1;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $primary;
+        }
+      }
+
+      .dots-active-products {
+        background-color: $primary;
+      }
+    }
+
+    @media screen and (max-width: 850px) {
+      text-align: center;
+    }
   }
 }
