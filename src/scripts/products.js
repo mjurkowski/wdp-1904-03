@@ -57,11 +57,15 @@ function selectSlide (index) {
 }
 
 function changeClassActive (e) {
-  document.querySelector('.products-active').classList.remove('products-active');
-  e.target.classList.add('products-active');
+  document
+    .querySelector('.dots-active-products')
+    .classList.remove('dots-active-products');
+  e.target.classList.add('dots-active-products');
 }
 
 function resetClassActive () {
-  document.querySelector('.products-active').classList.remove('products-active');
-  document.querySelectorAll('.dot')[0].classList.add('products-active');
+  document
+    .querySelector('.dots-active-products')
+    .classList.remove('dots-active-products');
+  document.querySelectorAll('.dot')[0].classList.add('dots-active-products');
 }
