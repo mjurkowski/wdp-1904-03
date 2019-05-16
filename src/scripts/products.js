@@ -1,20 +1,25 @@
-/* eslint-disable space-before-function-paren */
 import Flickity from 'flickity';
 
 var initialized = null;
 initialize();
 
-function initialize() {
+function initialize () {
   registerListeners();
+  initializeCarousel();
 }
 
-function registerListeners() {
+function registerListeners () {
   registerDotListeners();
   registerTabListeners();
 }
 
-function reinitialize(e) {
-  const id = `carousel-${e.target.id}`;
+function initializeCarousel () {
+  reinitializeCarousel(null, 'carousel-bed-tab');
+}
+
+function reinitializeCarousel (e, carouselId) {
+  const id = carouselId || `carousel-${e.target.id}`;
+
   if (initialized) {
     initialized.destroy();
   }
@@ -25,24 +30,38 @@ function reinitialize(e) {
   });
 }
 
-function registerTabListeners() {
+function registerTabListeners () {
   const tabs = document.querySelectorAll('.nav-item');
   const tabsArray = [...tabs];
 
   tabsArray.forEach(tab => {
-    tab.addEventListener('click', e => setTimeout(() => reinitialize(e), 1000));
+    tab.addEventListener('click', e => {
+      setTimeout(() => reinitializeCarousel(e), 1000);
+      resetClassActive();
+    });
   });
 }
 
-function registerDotListeners() {
+function registerDotListeners () {
   const navAnchor = document.querySelectorAll('.dot');
-  navAnchor.forEach(anchor => {
-    anchor.addEventListener('click', changeClassActive);
+  navAnchor.forEach((anchor, index) => {
+    anchor.addEventListener('click', function (e) {
+      changeClassActive(e);
+      selectSlide(index);
+    });
   });
 }
 
-function changeClassActive(e) {
-  const current = document.querySelector('.activer');
-  current.className = current.className.replace(' activer', '');
-  e.target.className += ' activer';
+function selectSlide (index) {
+  initialized.select(index);
+}
+
+function changeClassActive (e) {
+  document.querySelector('.products-active').classList.remove('products-active');
+  e.target.classList.add('products-active');
+}
+
+function resetClassActive () {
+  document.querySelector('.products-active').classList.remove('products-active');
+  document.querySelectorAll('.dot')[0].classList.add('products-active');
 }
