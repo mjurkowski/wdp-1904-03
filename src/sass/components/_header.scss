@@ -84,16 +84,12 @@ header {
         color: #ffffff;
         text-decoration: none;
 
-        .cart-icon {
-          @extend %transition-duration;
-          background-color: $primary;
-          width: 55px;
-          height: 50px;
-          border-radius: 3px;
+        .cart-container {
           display: flex;
           align-items: center;
 
           .cart-icon {
+            @extend %transition-duration;
             background-color: $primary;
             width: 55px;
             height: 50px;
@@ -222,24 +218,29 @@ header {
           margin-bottom: 0;
           padding-left: 0;
           height: 100%;
+
           li {
             background-color: white;
             height: 100%;
             padding: 9px 0;
+
             ul {
               display: none;
               position: relative;
               top: 11px;
+
               li {
                 text-align: center;
                 height: fit-content;
                 border: 1px solid $form-border-color;
                 border-top: none;
+
                 &:hover {
                   a {
                     color: white;
                   }
                 }
+
                 a {
                   &:hover {
                     text-decoration: none;
@@ -247,15 +248,18 @@ header {
                 }
               }
             }
+
             &:hover {
               ul {
                 display: block;
                 z-index: 10;
               }
             }
+
             &:hover {
               background-color: #dca35b;
               color: white;
+
               i:first-child {
                 color: white;
               }
@@ -293,6 +297,7 @@ header {
 .menu-bar-tablet {
   display: none;
 }
+
 .menu-bar-mobile {
   display: none;
 }
@@ -312,6 +317,7 @@ header {
     text-align: center;
     margin: 0;
     padding: 20px 0;
+
     a {
       &:hover {
         text-decoration: none;
@@ -346,11 +352,14 @@ header {
   .menu-bar {
     display: none;
   }
+
   .menu-bar-tablet {
     display: block;
+
     .container {
       height: 115px;
       text-align: center;
+
       .align-items-center {
         justify-content: center;
       }
@@ -400,8 +409,10 @@ header {
   .menu-bar {
     display: none;
   }
+
   .menu-bar-mobile {
     display: block;
+
     .container {
       text-align: center;
     }

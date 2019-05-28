@@ -4,7 +4,7 @@ console.log('hello');
 
 // toggle-menu on mobile
 
-var toggleSidebar = function() {
+var toggleSidebar = function () {
   var menuMobile = document.querySelector('#toggle-menu');
   menuMobile.classList.toggle('active');
 };
@@ -18,7 +18,7 @@ hamburgerToggle.addEventListener('click', toggleSidebar);
 // Enable carousel
 document.addEventListener('DOMContentLoaded', initCarousel);
 
-function initCarousel() {
+function initCarousel () {
   let groupCells = 1;
 
   if (window.matchMedia('(min-width:767px) and (max-width: 992px)').matches) {
