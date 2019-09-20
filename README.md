@@ -2,11 +2,7 @@
 
 ## Opis projektu
 
-DO UZUPEŁNIENIA
-
-## Demo
-
-DO UZUPEŁNIENIA
+Projekt grupowy mający na celu wdrożenie w tajniki pracy w zespole 
 
 ## Inicjacja projektu
 
@@ -31,7 +27,3 @@ Projekt korzysta z Git Hooks - możliwości uruchamiania skryptów w reakcji na 
 
 Za każdym razem gdy wykonasz komendę `git commit` zostanie uruchomiony skrypt `code-quality`
 dla plików, które zostały wybrane do za-commit'owania.
-
-## Konwencje i dobre praktyki
-
-DO UZUPEŁNIENIA
