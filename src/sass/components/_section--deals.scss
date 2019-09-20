@@ -1,0 +1,53 @@
+.section--deals {
+  margin: 30px 0;
+  .hero-deal {
+    height: 500px;
+    width: inherit;
+    display: flex;
+    justify-content: center;
+  }
+  .overlay {
+    background-color: rgba(77, 77, 77, 0.719);
+    position: absolute;
+    transform: translateY(5%);
+    height: 90%;
+    width: 90%;
+    font-size: 36px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    .overlay-text {
+      padding: 30px;
+      h2 {
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 1.4em;
+      }
+      .discount {
+        text-align: center;
+        width: fit-content;
+        border: 3px solid white;
+        padding: 0 15px;
+      }
+    }
+  }
+  .bigImg {
+    height: 100%;
+    width: inherit;
+  }
+
+  .collections {
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+
+    img {
+      height: 48%;
+      object-fit: cover;
+      &:first-child {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
